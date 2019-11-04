@@ -17,31 +17,6 @@ import java.util.List;
 
 public class myAdapter extends MvpRecyclerListAdapter<Repos, ReposPresenter, ReposViewHolder> {
 
-    List<String> myList = new ArrayList<>();
-
-    myAdapter(){
-        myList.add("Odin");
-        myList.add("Dva");
-        myList.add("Tri");
-        myList.add("Odin");
-        myList.add("Dva");
-        myList.add("Tri");
-        myList.add("Odin");
-        myList.add("Dva");
-        myList.add("Tri");
-        myList.add("Odin");
-        myList.add("Dva");
-        myList.add("Tri");
-        myList.add("Odin");
-        myList.add("Dva");
-        myList.add("Tri");
-        myList.add("Odin");
-        myList.add("Dva");
-        myList.add("Tri");
-    }
-
-
-
     @Override
     public ReposViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ReposViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_row, parent, false));

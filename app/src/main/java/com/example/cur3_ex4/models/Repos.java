@@ -1,22 +1,29 @@
 package com.example.cur3_ex4.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class Repos {
-    private Integer id;
+
+    @SerializedName("name")
+    @Expose
     private String name;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    @SerializedName("id")
+    @Expose
+    private String id;
 
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
 }

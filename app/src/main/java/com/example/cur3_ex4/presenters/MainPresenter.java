@@ -1,15 +1,19 @@
 package com.example.cur3_ex4.presenters;
 
 import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 
-import com.example.cur3_ex4.CounterDatabase;
+import com.example.cur3_ex4.NetworkService;
 import com.example.cur3_ex4.models.Repos;
 import com.example.cur3_ex4.views.MainView;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainPresenter extends BasePresenter<List<Repos>, MainView> {
     private boolean isLoadingData = false;
@@ -37,22 +41,23 @@ public class MainPresenter extends BasePresenter<List<Repos>, MainView> {
 
     private void loadData() {
         isLoadingData = true;
-        new LoadDataTask().execute();
+        NetworkService.getInstance()
+                .getJSONApi()
+                .loadRepos("garybmx")
+                .enqueue(new Callback<List<Repos>>() {
+                    @Override
+                    public void onResponse(@NonNull Call<List<Repos>> call, @NonNull Response<List<Repos>> response) {
+                        List<Repos> reposes = response.body();
+                        setModel(reposes);
+                        isLoadingData = false;
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Repos>> call, Throwable t) {
+                        t.printStackTrace();
+                    }
+                });
+
     }
 
-
-    // It's OK for this class not to be static and to keep a reference to the Presenter, as this
-    // is retained during orientation changes and is lightweight (has no activity/view reference)
-    private class LoadDataTask extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected Void doInBackground(Void... params) {
-           return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            setModel(CounterDatabase.getInstance().getAllCounters());
-            isLoadingData = false;
-        }
-    }
 }

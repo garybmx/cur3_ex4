@@ -9,7 +9,6 @@ import com.example.cur3_ex4.models.Repos;
 import com.example.cur3_ex4.presenters.MainPresenter;
 import com.example.cur3_ex4.views.MainView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainView {
@@ -35,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new myAdapter();
         mRecyclerView.setAdapter(mAdapter);
+
+
     }
 
     @Override
