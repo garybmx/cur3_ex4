@@ -1,0 +1,66 @@
+package com.example.cur3_ex4;
+
+import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.example.cur3_ex4.models.Repos;
+import com.example.cur3_ex4.presenters.ReposPresenter;
+import com.example.cur3_ex4.views.ReposViewHolder;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class myAdapter extends MvpRecyclerListAdapter<Repos, ReposPresenter, ReposViewHolder> {
+
+    List<String> myList = new ArrayList<>();
+
+    myAdapter(){
+        myList.add("Odin");
+        myList.add("Dva");
+        myList.add("Tri");
+        myList.add("Odin");
+        myList.add("Dva");
+        myList.add("Tri");
+        myList.add("Odin");
+        myList.add("Dva");
+        myList.add("Tri");
+        myList.add("Odin");
+        myList.add("Dva");
+        myList.add("Tri");
+        myList.add("Odin");
+        myList.add("Dva");
+        myList.add("Tri");
+        myList.add("Odin");
+        myList.add("Dva");
+        myList.add("Tri");
+    }
+
+
+
+    @Override
+    public ReposViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ReposViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_row, parent, false));
+    }
+
+    @NonNull
+    @Override
+    protected ReposPresenter createPresenter(@NonNull Repos repos) {
+        ReposPresenter presenter = new ReposPresenter();
+        presenter.setModel(repos);
+        return presenter;
+    }
+
+    @NonNull
+    @Override
+    protected Object getModelId(@NonNull Repos model) {
+        return model.getId();
+    }
+
+}
+
+
