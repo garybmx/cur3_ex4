@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">cur3_ex4</string>
+    <string name="reload">Проверить обновления</string>
 </resources>

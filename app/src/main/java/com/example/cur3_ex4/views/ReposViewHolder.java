@@ -1,12 +1,14 @@
 package com.example.cur3_ex4.views;
 
-import android.support.v7.widget.CardView;
+
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.cur3_ex4.MvpViewHolder;
 import com.example.cur3_ex4.R;
 import com.example.cur3_ex4.presenters.ReposPresenter;
+
+import androidx.cardview.widget.CardView;
 
 
 public class ReposViewHolder extends MvpViewHolder<ReposPresenter> implements ReposView {

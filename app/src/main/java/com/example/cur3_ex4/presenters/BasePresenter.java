@@ -1,8 +1,8 @@
 package com.example.cur3_ex4.presenters;
 
-import android.support.annotation.NonNull;
-
 import java.lang.ref.WeakReference;
+
+import androidx.annotation.NonNull;
 
 public abstract class BasePresenter<M, V> {
     protected M model;

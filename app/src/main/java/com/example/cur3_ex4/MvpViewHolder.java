@@ -1,9 +1,11 @@
 package com.example.cur3_ex4;
 
-import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
 
 import com.example.cur3_ex4.presenters.BasePresenter;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class MvpViewHolder<P extends BasePresenter> extends RecyclerView.ViewHolder {
     protected P presenter;

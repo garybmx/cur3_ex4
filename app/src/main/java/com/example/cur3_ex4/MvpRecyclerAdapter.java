@@ -1,12 +1,13 @@
 package com.example.cur3_ex4;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 
 import com.example.cur3_ex4.presenters.BasePresenter;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 public abstract class MvpRecyclerAdapter<M, P extends BasePresenter, VH extends MvpViewHolder> extends RecyclerView.Adapter<VH> {
     protected final Map<Object, P> presenters;
