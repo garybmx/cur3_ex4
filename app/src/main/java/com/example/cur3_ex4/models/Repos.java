@@ -3,6 +3,7 @@ package com.example.cur3_ex4.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
 public class Repos {
 
     @SerializedName("name")
@@ -11,6 +12,11 @@ public class Repos {
     @SerializedName("id")
     @Expose
     private String id;
+
+    public Repos(String id, String name){
+        this.name = name;
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -24,6 +30,9 @@ public class Repos {
     public void setId(String id) {
         this.id = id;
     }
+
+
+
 
 
 }
